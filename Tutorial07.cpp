@@ -92,7 +92,8 @@ int WINAPI wWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, 
 	}
 
 	g_Chip8.LoadProgram("Blitz.ch8");
-	//for (int i = 0; i < 1000; ++i)
+
+	//for (int i = 0; i < 10000; ++i)
 	//{
 	//	g_Chip8.Step();
 	//}
@@ -614,9 +615,6 @@ void Render()
 	}
 
 	// Update texture
-
-	static int pos = 0;
-
 	D3D11_MAPPED_SUBRESOURCE mappedResource;
 
 	if (!FAILED(g_pImmediateContext->Map(
@@ -644,7 +642,6 @@ void Render()
 			}
 		}
 		
-
 		g_pImmediateContext->Unmap(
 			g_pTexture,
 			0
